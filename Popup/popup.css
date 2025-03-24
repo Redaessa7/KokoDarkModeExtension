@@ -1,0 +1,242 @@
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 260px;
+    padding: 25px;
+    border-radius: 12px;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* الوضع النهاري */
+body.light-theme {
+    background: linear-gradient(135deg, #f7f6fb, #d4d0e8);
+    color: #1c1b29;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* الوضع المظلم */
+body.dark-theme {
+    background: linear-gradient(135deg, #1b192b, #0e0e1c);
+    color: #e3e3e3;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* الكونتينر */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* العنوان */
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.5s ease;
+}
+
+body.light-theme h2 {
+    color: #8269CE;
+    text-shadow: 0 2px 4px rgba(130, 105, 206, 0.3);
+}
+
+body.dark-theme h2 {
+    color: #9d86e8;
+    text-shadow: 0 2px 4px rgba(130, 105, 206, 0.5);
+}
+
+/* الزر */
+button {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+body.light-theme button {
+    background: #8269CE;
+    box-shadow: 0 4px 15px rgba(130, 105, 206, 0.5);
+}
+
+body.dark-theme button.dark-mode-on {
+    background: #2a254b;
+    box-shadow: 0 4px 15px rgba(42, 37, 75, 0.8);
+}
+
+/* لوجو الصورة */
+button .logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+body.light-theme button .logo-img {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+body.dark-theme button .logo-img {
+    filter: brightness(1.1);
+}
+
+/* Hover effect */
+button:hover:not(:disabled) .logo-img {
+    transform: scale(1.1);
+}
+
+/* أنيميشن التحويل */
+button.toggle-animation {
+    animation: spin 0.5s ease-in-out;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover */
+button:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+body.light-theme button:hover:not(:disabled) {
+    background: #6f55bf;
+    box-shadow: 0 6px 20px rgba(130, 105, 206, 0.7);
+}
+
+body.dark-theme button:hover:not(:disabled) {
+    background: #6f55bf;
+    box-shadow: 0 6px 20px rgba(130, 105, 206, 0.7);
+}
+
+/* زر معطل */
+button:disabled {
+    background: #4d4d4d;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+button:disabled .logo-img {
+    filter: grayscale(1);
+}
+
+/* النص */
+.status-text {
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: color 0.5s ease;
+}
+
+body.light-theme .status-text.active {
+    color: #8269CE;
+}
+
+body.dark-theme .status-text.active {
+    color: #9d86e8;
+}
+
+body.light-theme .status-text.inactive {
+    color: #1c1b29;
+}
+
+body.dark-theme .status-text.inactive {
+    color: #e3e3e3;
+}
+
+body.light-theme .status-text.disabled {
+    color: #4d4d4d;
+}
+
+body.dark-theme .status-text.disabled {
+    color: #4d4d4d;
+}
+
+/* معلومات المطور */
+.developer-info {
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+body.light-theme .developer-info {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(130, 105, 206, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .developer-info {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(130, 105, 206, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.developer-info p {
+    font-size: 13px;
+    transition: color 0.5s ease;
+}
+
+body.light-theme .developer-info p {
+    color: #1c1b29;
+}
+
+body.dark-theme .developer-info p {
+    color: #bcbcbc;
+}
+
+.developer-info span {
+    color: #8269CE;
+    font-weight: 600;
+}
+
+.socials {
+    margin-top: 6px;
+}
+
+.socials a {
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 8px;
+    transition: color 0.5s ease;
+}
+
+body.light-theme .socials a {
+    color: #8269CE;
+}
+
+body.dark-theme .socials a {
+    color: #9d86e8;
+}
+
+body.light-theme .socials a:hover {
+    color: #6f55bf;
+}
+
+body.dark-theme .socials a:hover {
+    color: #6f55bf;
+}
