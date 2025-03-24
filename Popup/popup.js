@@ -4,8 +4,6 @@ function updateButtonState(isDarkModeEnabled, isTargetSite) {
     const statusText = document.getElementById('status-text');
     const body = document.body;
 
-    button.textContent = ''; // نفرغ النص لأن اللوجو كافي
-
     if (!isTargetSite) {
         button.disabled = true;
         button.classList.remove('dark-mode-on');

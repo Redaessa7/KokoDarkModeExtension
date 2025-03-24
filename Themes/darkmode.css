@@ -20,6 +20,8 @@
     --mid-gray: #aeaeae;
     /* Transparent yellow color */
     --yellow-transparent: rgba(239, 186, 11, 0.98);
+    /* scrollbar background */
+    --scrollbar-bg: #1e1e1e;
 }
 
 /* ========================= GLOBAL STYLES ========================= */
@@ -219,7 +221,8 @@ body.darkmode input.form-control.search {
 
 /* ========================= PROGRESS INDICATORS ========================= */
 /* Progress bars */
-body.darkmode .progressbar {
+body.darkmode .progressbar,
+body.darkmode .progressBar.jsx-2344401481 {
     background: var(--light-text) !important;
 }
 
@@ -227,11 +230,13 @@ body.darkmode .progressbar .progressbar-fill {
     background: var(--yellow-transparent) !important;
 }
 
-body.darkmode .progress.jsx-1189601211 {
+body.darkmode .progress.jsx-1189601211,
+body.darkmode .progress.jsx-2344401481 {
     background: var(--secondary-bg) !important;
 }
 
 body.darkmode .progressBar.jsx-1189601211,
+body.darkmode .jsx-2344401481.finished,
 body.darkmode .finished.jsx-1189601211 {
     background: var(--yellow-transparent) !important;
 }
@@ -371,10 +376,15 @@ body.darkmode .course-sidebar-head {
     background: var(--primary-bg) !important;
 }
 
+body.darkmode .course-sidebar-head h2 {
+    color: var(--light-text) !important;
+}
+
 body.darkmode .revamped_lecture_player .course-sidebar,
 body.darkmode .course-sidebar,
 body.darkmode .revamped_lecture_player .course-sidebar.navbar-sidebar-collapse {
     background-color: var(--secondary-bg) !important;
+    border-right: none !important;
 }
 
 /* Lecture navigation */
@@ -382,9 +392,11 @@ body.darkmode .revamped_lecture_player .course-sidebar h2 {
     color: var(--light-text) !important;
 }
 
-body.darkmode .revamped_lecture_player .course-sidebar .course-progress.lecture-page.sticky {
+body.darkmode .revamped_lecture_player .course-sidebar .course-progress.lecture-page.sticky,
+body.darkmode .course-sidebar .course-progress.lecture-page.sticky {
     background: var(--dark-yellow) !important;
     color: var(--secondary-bg) !important;
+    border-bottom: 1px solid var(--primary-bg) !important;
 }
 
 body.darkmode .course-section ul.section-list .section-item.completed .item,
@@ -519,6 +531,44 @@ body.darkmode .revamped_lecture_player .lecture-content .lecture-video {
 body.darkmode .revamped_lecture_player .lecture-content .lecture-video .video-placeholder {
     background: var(--secondary-bg) !important;
 }
+
+/* Text Content Body H3,H4,H5,H6*/
+body.darkmode .lecture-text-container h3,
+body.darkmode .lecture-text-container h4,
+body.darkmode .lecture-text-container h5,
+body.darkmode .lecture-text-container h6 {
+    color: var(--mid-gray) !important;
+}
+
+/* ========================= Preview Course Page ========================= */
+body.darkmode .block__curriculum__wrapper,
+body.darkmode .b-192580811-background_color,
+body.darkmode .b-192580807-background_color {
+    background-color: transparent !important;
+}
+
+body.darkmode .block__curriculum__wrapper h4 strong,
+body.darkmode .b-192580811-background_color h4 strong {
+    color: var(--mid-gray) !important;
+}
+
+body.darkmode .block__curriculum__section__title.b-192580807-section_name_background_color {
+    background: var(--secondary-bg) !important;
+    border-radius: 4px !important;
+    color: var(--gray-text) !important;
+    border-bottom: 1px solid var(--medium-text) !important;
+}
+
+body.darkmode .block__curriculum__section__list__item.b-192580807-lecture_name_background_color {
+    background: var(--primary-bg) !important;
+    border-radius: 2px !important;
+    border-bottom: 1px solid var(--medium-text) !important;
+}
+
+body.darkmode .block__pricing__plan__price {
+    color: var(--light-text) !important;
+}
+
 
 /* ========================= LECTURE ATTACHMENTS ========================= */
 body.darkmode .revamped_lecture_player .lecture-content .lecture-attachment .attachment-block {
@@ -701,4 +751,44 @@ body.darkmode .lecture-text-container p span,
 body.darkmode .lecture-text-container p strong {
     background-color: rgba(255, 210, 60, 0.724) !important;
     color: var(--secondary-bg) !important;
+}
+
+/* ========================= ScrollBar ========================= */
+
+/* ScrollBar General and in lecture page */
+body.darkmode::-webkit-scrollbar,
+body.darkmode .course-sidebar::-webkit-scrollbar,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+/* Track */
+body.darkmode::-webkit-scrollbar-track,
+body.darkmode .course-sidebar::-webkit-scrollbar-track,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg) !important;
+    margin: 1px 0;
+}
+
+/* Thumb */
+body.darkmode::-webkit-scrollbar-thumb,
+body.darkmode .course-sidebar::-webkit-scrollbar-thumb,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar-thumb {
+    background-color: var(--medium-text) !important;
+    border-radius: 10px !important;
+    border: 2px solid var(--scrollbar-bg) !important;
+    min-height: 30px !important;
+}
+
+/* Hover effect */
+body.darkmode::-webkit-scrollbar-thumb:hover,
+body.darkmode .course-sidebar::-webkit-scrollbar-thumb:hover,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar-thumb:hover {
+    background: var(--light-text) !important;
+}
+
+/* ========================= Footer ========================= */
+
+body.darkmode .footer__inner {
+    color: var(--gray-text);
 }
