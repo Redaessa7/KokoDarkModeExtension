@@ -41,7 +41,7 @@ body.darkmode h3,
 body.darkmode h4,
 body.darkmode h5,
 body.darkmode h6 {
-    color: var(--medium-text) !important;
+    color: var(--mid-gray) !important;
 }
 
 /* Links */
@@ -53,6 +53,7 @@ body.darkmode a:-webkit-any-link:hover {
     color: var(--dark-yellow);
     transition: all linear 0.1s;
 }
+
 
 /* ========================= LAYOUT ELEMENTS ========================= */
 /* Main structural elements */
@@ -306,9 +307,10 @@ body.darkmode .instructor.jsx-1343021134 {
 }
 
 body.darkmode .ins-bio p,
+body.darkmode .ins-bio div,
 body.darkmode .ins-bio>ul,
 body.darkmode .ins-bio>ol {
-    color: var(--medium-text) !important;
+    color: var(--mid-gray) !important;
 }
 
 body.darkmode .name.jsx-1343021134 {
