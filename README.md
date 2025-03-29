@@ -32,7 +32,6 @@ To use or test the extension in development mode, follow these steps:
 5. **Test It Out**  
    - Visit [programmingadvices.com](https://programmingadvices.com/), and the dark mode theme will automatically apply!
 
-
 ## Manifest Details
 - **Version**: 3 (Uses Manifest V3, the latest standard for browser extensions).
 - **Permissions**:
@@ -46,6 +45,31 @@ To use or test the extension in development mode, follow these steps:
 - The extension injects the `darkmode.css` stylesheet into matching pages at `document_start`, ensuring the dark theme loads immediately.
 - The `content.js` file can be extended to add interactivity or additional logic.
 - A popup interface (`popup.html`) is included for future enhancements, such as toggling the dark mode on/off.
+
+## Supported Pages
+The extension applies dark mode to the following pages:
+- Home
+- My Courses
+- Courses
+- Course Content
+- Lecture
+- Course Purchase
+- Saving Bundles
+- Payments Methods
+- Support Coupons
+- Portal Guide
+- Roadmap Faqs
+- Students Feedback
+- Success Stories
+- Important Links
+
+## Versions
+### Latest Version
+- **Version:** 1.0
+- **Release Date:** [Add Release Date]
+- **Changes:**
+  - Initial release with full dark mode support.
+
 
 ## Development
 To modify or enhance the extension:

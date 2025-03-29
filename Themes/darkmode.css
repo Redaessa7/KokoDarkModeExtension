@@ -1,796 +1,1276 @@
 /* ========================= VARIABLES ========================= */
 :root {
-    /* Main background */
-    --primary-bg: #0e0e0e;
-    /* Secondary background */
-    --secondary-bg: #131313;
-    /* Very dark background */
+    /* Background Colors */
+    --primary-bg: #0f0f0f;
+    /* Dark primary background */
+    --secondary-bg: #171717;
+    /* Slightly lighter dark background */
     --dark-bg: #080808;
-    /* Light text color */
-    --light-text: #e3e3e3;
-    /* Medium text color */
-    --medium-text: #4d4d4d;
-    /* Light gray text color */
-    --gray-text: #bcbcbc;
-    /* Yellow color */
-    --yellow: #efba0b;
-    /* Dark yellow color */
-    --dark-yellow: #ca9e0f;
-    /* Medium gray color */
-    --mid-gray: #aeaeae;
-    /* Transparent yellow color */
-    --yellow-transparent: rgba(239, 186, 11, 0.98);
-    /* scrollbar background */
+    /* Deepest black */
     --scrollbar-bg: #1e1e1e;
+    /* Scrollbar background */
+
+    /* Text Colors */
+    --text-light: #e3e3e3;
+    /* Light text color */
+    --text-medium: #4d4d4d;
+    /* Medium text color */
+    --text-gray: #bcbcbc;
+    /* Light gray text color */
+    --text-highlight: #efba0b;
+    /* Highlighted text (yellow) */
+    --text-dark-yellow: #ca9e0f;
+    /* Darker yellow text */
+
+    /* Accent Colors */
+    --accent-yellow: #efba0b;
+    /* Primary yellow */
+    --accent-dark-yellow: #ca9e0f;
+    /* Darker shade of yellow */
+    --accent-mid-gray: #aeaeae;
+    /* Medium gray */
+    --accent-yellow-transparent: rgba(239, 186, 11, 0.98);
+    /* Transparent yellow */
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, #0f0f0f, #171717);
+    --gradient-gold: linear-gradient(135deg, #efba0b, #ca9e0f);
+    --gradient-button: linear-gradient(90deg, #efba0b, #e3c769);
+
+    /* Shadows */
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    --text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
+
 
 /* ========================= GLOBAL STYLES ========================= */
 body.darkmode {
-    background-color: var(--primary-bg) !important;
-    color: var(--medium-text) !important;
+    background-color: var(--primary-bg);
+    color: var(--text-light);
 }
 
-/* Text elements */
-body.darkmode p {
-    color: var(--gray-text) !important;
+/* ========================= NAVIGATION BAR ========================= */
+body.darkmode nav {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
 }
 
+/* ========================= LINKS ========================= */
+body.darkmode a {
+    color: var(--text-gray);
+    text-decoration: none;
+}
+
+body.darkmode a:hover {
+    color: var(--accent-dark-yellow);
+}
+
+body.darkmode link {
+    color: var(--accent-dark-yellow);
+}
+
+/* ========================= NAVIGATION LINKS ========================= */
+body.darkmode nav a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+}
+
+body.darkmode nav a:hover {
+    color: var(--accent-dark-yellow);
+}
+
+/* ========================= FOOTER ========================= */
+body.darkmode footer {
+    background-color: var(--primary-bg);
+    color: var(--gray-text);
+    text-align: center;
+}
+
+/* ========================= HEADINGS ========================= */
 body.darkmode h1,
 body.darkmode h2,
 body.darkmode h3,
 body.darkmode h4,
 body.darkmode h5,
 body.darkmode h6 {
-    color: var(--mid-gray) !important;
-}
-
-/* Links */
-body.darkmode a:-webkit-any-link {
-    color: var(--medium-text);
-}
-
-body.darkmode a:-webkit-any-link:hover {
-    color: var(--dark-yellow);
-    transition: all linear 0.1s;
-}
-
-
-/* ========================= LAYOUT ELEMENTS ========================= */
-/* Main structural elements */
-body.darkmode .view-directory.course-directory,
-body.darkmode .container.jsx-2755510470,
-body.darkmode section.lecture-page-layout {
-    background: var(--primary-bg) !important;
-}
-
-body.darkmode header,
-body.darkmode footer,
-body.darkmode .footer,
-body.darkmode header.full-width.half-height.is-signed-in {
-    background: var(--secondary-bg) !important;
-}
-
-/* ========================= NAVIGATION ========================= */
-/* Navbar */
-body.darkmode .navbar-fedora,
-body.darkmode .navbar,
-body.darkmode .wrap.jsx-2501835884,
-body.darkmode .navbar-fedora .btstrp-navbar-collapse.in {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .navbar-fedora .btstrp-navbar-brand.header-logo img,
-body.darkmode .navbar__header img {
-    max-height: 90% !important;
-    max-width: 90% !important;
-}
-
-body.darkmode .nav.navbar-nav>li .fedora-navbar-link {
-    color: var(--light-text);
-}
-
-/* Dropdowns */
-body.darkmode .dropdown-menu,
-body.darkmode .inner-menu {
-    background: var(--secondary-bg) !important;
-    color: var(--light-text) !important;
-    text-align: right;
-}
-
-body.darkmode .dropdown-menu li a,
-body.darkmode .inner-menu li a,
-body.darkmode .open>.inner-menu li a,
-body.darkmode .open>.dropdown-menu li a {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .inner-menu>li>a:hover,
-body.darkmode .dropdown-menu>li>a:hover {
-    background: var(--dark-yellow) !important;
-    color: var(--primary-bg) !important;
-}
-
-body.darkmode .course-filter {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .btn-default.btn-lg.btn-course-filter.dropdown-toggle {
-    background: none;
-    color: var(--yellow) !important;
-}
-
-
-/* Inner Menu */
-body.darkmode .inner-menu {
-    /* border: 1px solid var(--medium-text) !important; */
-    border: none !important;
-}
-
-body.darkmode .inner-menu li a {
-    text-decoration: none !important;
-}
-
-
-/* ========================= BUTTONS & CONTROLS ========================= */
-/* Buttons */
-body.darkmode button,
-body.darkmode .btn-default {
-    color: var(--medium-text) !important;
-    background: var(--secondary-bg) !important;
-    border-color: var(--secondary-bg) !important;
-}
-
-body.darkmode .btn-primary,
-body.darkmode .btn-primary:active,
-body.darkmode .btn-primary:focus {
-    background: var(--yellow) !important;
-    border: 1px solid var(--yellow) !important;
-}
-
-body.darkmode .nav.navbar-nav>li .btn-primary {
-    color: var(--secondary-bg) !important;
-}
-
-body.darkmode a#header-sign-up-btn.btn.btn-primary.pull-right.btn-lg {
-    background: var(--yellow) !important;
-    border: 1px solid var(--yellow) !important;
-}
-
-/* Base buttons */
-body.darkmode .base-button {
-    background: var(--yellow) !important;
-    color: var(--secondary-bg) !important;
-    border-radius: 2px !important;
-}
-
-body.darkmode .base-button:hover {
-    background: var(--dark-yellow) !important;
-}
-
-/* Secondary buttons */
-body.darkmode .secondaryButtonInverse,
-body.darkmode .secondaryButton {
-    background: var(--secondary-bg) !important;
-    color: var(--light-text) !important;
-    border: 1px solid var(--secondary-bg) !important;
-}
-
-body.darkmode .secondaryButtonInverse:hover,
-body.darkmode .secondaryButton:hover {
-    background: var(--yellow) !important;
-    color: var(--secondary-bg) !important;
-    transition: all linear 0.1s !important;
-}
-
-/* Primary buttons with specific classes */
-body.darkmode .btn.btn-primary.pull-right.btn-md {
-    background: var(--dark-bg) !important;
-    color: var(--yellow) !important;
-    border: 2px solid var(--secondary-bg) !important;
-    border-radius: 10px !important;
-}
-
-body.darkmode .btn.btn-primary.pull-right.btn-md:hover {
-    background: var(--yellow) !important;
-    color: var(--secondary-bg) !important;
-    transition: all linear 0.1s !important;
-}
-
-/* Complete lecture button */
-body.darkmode .btn.complete.lecture-complete {
-    background: var(--yellow) !important;
-    color: var(--secondary-bg) !important;
-    border: 2px solid var(--secondary-bg) !important;
-}
-
-body.darkmode .btn.complete.lecture-complete:hover {
-    background: var(--secondary-bg) !important;
-    color: var(--yellow) !important;
-    transition: all linear 0.1s !important;
-}
-
-/* Input fields */
-body.darkmode .form-control {
-    color: var(--medium-text) !important;
-    background: var(--secondary-bg) !important;
-    border: 1px solid var(--secondary-bg) !important;
-}
-
-body.darkmode input.form-control.search {
-    background: var(--secondary-bg) !important;
-}
-
-/* ========================= PROGRESS INDICATORS ========================= */
-/* Progress bars */
-body.darkmode .progressbar,
-body.darkmode .progressBar.jsx-2344401481 {
-    background: var(--light-text) !important;
-}
-
-body.darkmode .progressbar .progressbar-fill {
-    background: var(--yellow-transparent) !important;
-}
-
-body.darkmode .progress.jsx-1189601211,
-body.darkmode .progress.jsx-2344401481 {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .progressBar.jsx-1189601211,
-body.darkmode .jsx-2344401481.finished,
-body.darkmode .finished.jsx-1189601211 {
-    background: var(--yellow-transparent) !important;
-}
-
-/* Course progress */
-body.darkmode .revamped_lecture_player .course-sidebar .course-progress .progress-percentage {
-    color: var(--yellow) !important;
-}
-
-body.darkmode .revamped_lecture_player .course-sidebar .course-progress .progress-bar {
-    background: var(--dark-yellow) !important;
-}
-
-body.darkmode p.completion.jsx-1998191207 {
-    color: var(--yellow) !important;
-}
-
-/* ========================= COURSE LISTING ========================= */
-/* Course cards */
-body.darkmode .view-directory .course-listing {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .course-listing {
-    box-shadow: 0px 1px var(--primary-bg) !important;
-    border: 1px solid var(--primary-bg) !important;
-}
-
-body.darkmode .course-listing .course-listing-title {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .course-listing:hover .course-listing-title {
-    color: var(--yellow) !important;
-}
-
-body.darkmode .course-listing .course-listing-extra-info .course-author-name,
-body.darkmode .course-listing .course-listing-extra-info .course-bundle {
-    color: var(--medium-text) !important;
-}
-
-body.darkmode .course-listing .course-listing-extra-info .course-price {
-    color: var(--yellow) !important;
-}
-
-body.darkmode .course-listing .course-listing-extra-info .course-progress {
-    color: var(--yellow-transparent) !important;
-}
-
-/* ========================= BANNER ========================= */
-body.darkmode .banner.jsx-1640592643 {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .right.jsx-1640592643 {
-    background: var(--primary-bg) !important;
-}
-
-body.darkmode h3.subheading.jsx-1640592643,
-body.darkmode h1.heading.jsx-1640592643 {
-    color: var(--light-text) !important;
-}
-
-/* ========================= INSTRUCTOR ========================= */
-body.darkmode .instructor.jsx-1343021134 {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .ins-bio p,
-body.darkmode .ins-bio div,
-body.darkmode .ins-bio>ul,
-body.darkmode .ins-bio>ol {
-    color: var(--mid-gray) !important;
-}
-
-body.darkmode .name.jsx-1343021134 {
-    color: var(--light-text) !important;
-}
-
-/* ========================= COURSE CONTENT ========================= */
-/* Sections */
-body.darkmode .section-header.jsx-4255369697 {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode h2.heading.jsx-4255369697 {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .icon.jsx-4255369697,
-body.darkmode .icon-check.jsx-1998191207 {
-    color: var(--yellow) !important;
-}
-
-/* Lectures */
-body.darkmode .lectures.jsx-3137867545 {
-    background: var(--secondary-bg) !important;
-    padding: 16px 16px 16px 28px !important;
-}
-
-body.darkmode .bar.jsx-2138578525 {
-    background: var(--primary-bg) !important;
-    border: 1px solid var(--secondary-bg) !important;
-}
-
-body.darkmode .slim-section.jsx-3137867545 {
-    background: var(--primary-bg) !important;
-}
-
-body.darkmode .status-icon.jsx-2138578525 {
-    color: var(--yellow) !important;
-}
-
-body.darkmode .info.jsx-2138578525 {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .icon.jsx-2138578525 {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .text.jsx-2138578525 {
-    color: var(--dark-yellow) !important;
-}
-
-/* ========================= LECTURE PLAYER ========================= */
-/* Main lecture page layout */
-body.darkmode .revamped_lecture_player .course-sidebar {
-    background: var(--secondary-bg) !important;
-}
-
-body.darkmode .course-mainbar,
-body.darkmode .revamped_lecture_player .lecture-content.course-mainbar {
-    background: var(--primary-bg) !important;
-}
-
-body.darkmode .course-sidebar-head {
-    background: var(--primary-bg) !important;
-}
-
-body.darkmode .course-sidebar-head h2 {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .course-sidebar,
-body.darkmode .course-sidebar,
-body.darkmode .revamped_lecture_player .course-sidebar.navbar-sidebar-collapse {
-    background-color: var(--secondary-bg) !important;
-    border-right: none !important;
-}
-
-/* Lecture navigation */
-body.darkmode .revamped_lecture_player .course-sidebar h2 {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .course-sidebar .course-progress.lecture-page.sticky,
-body.darkmode .course-sidebar .course-progress.lecture-page.sticky {
-    background: var(--dark-yellow) !important;
-    color: var(--secondary-bg) !important;
-    border-bottom: 1px solid var(--primary-bg) !important;
-}
-
-body.darkmode .course-section ul.section-list .section-item.completed .item,
-body.darkmode .course-section ul.section-list .section-item .item,
-body.darkmode .revamped_lecture_player .course-section ul.section-list .section-item .item {
-    background: transparent !important;
-}
-
-body.darkmode .course-section ul.section-list .section-item.completed .item:hover,
-body.darkmode .course-section ul.section-list .section-item .item:hover,
-body.darkmode .revamped_lecture_player .course-section ul.section-list .section-item .item:hover {
-    background: var(--primary-bg) !important;
-}
-
-/* Section status indicators */
-body.darkmode .revamped_lecture_player .course-section ul.section-list .section-item.next-lecture .status-icon {
-    background: var(--dark-yellow) !important;
-}
-
-body.darkmode .revamped_lecture_player .course-section ul.section-list .section-item.completed .status-icon,
-body.darkmode .course-section ul.section-list .section-item.completed .status-icon,
-body.darkmode .course-section ul.section-list .section-item.next-lecture .status-icon {
-    background-color: var(--dark-yellow) !important;
-}
-
-body.darkmode .course-section ul.section-list .section-item.completed .status-icon,
-body.darkmode .course-section ul.section-list .section-item.next-lecture .status-icon,
-body.darkmode .course-section ul.section-list .section-item.incomplete .status-icon,
-body.darkmode .revamped_lecture_player .course-section ul.section-list .section-item.incomplete .status-icon,
-body.darkmode .revamped_lecture_player .course-section ul.section-list .section-item.next-lecture .status-icon {
-    box-shadow: inset 0px 0px 0px 2px var(--yellow);
-}
-
-body.darkmode .course-section ul.section-list .section-item.incomplete .status-icon:hover {
-    box-shadow: inset 0px 0px 0px 2px var(--medium-text);
-}
-
-/* Navigation icons */
-body.darkmode .revamped_lecture_player header.half-height .lecture-left .nav-icon-back,
-body.darkmode .header.half-height .lecture-left .nav-icon-settings,
-body.darkmode .revamped_lecture_player header.half-height .lecture-left .nav-icon-settings,
-body.darkmode .revamped_lecture_player header.half-height .lecture-left .nav-icon-list {
-    color: var(--medium-text) !important;
-}
-
-body.darkmode .revamped_lecture_player header.half-height .lecture-left .nav-icon-back:hover,
-body.darkmode .revamped_lecture_player header.half-height .lecture-left .nav-icon-settings:hover,
-body.darkmode .revamped_lecture_player header.half-height .lecture-left .nav-icon-list:hover {
-    color: var(--yellow) !important;
-    transition: all linear 0.1s !important;
-}
-
-/* Navigation buttons */
-body.darkmode .revamped_lecture_player header.half-height .lecture-nav a.nav-btn {
-    color: var(--secondary-bg);
-    border: 1px solid var(--medium-text) !important;
-    background: var(--primary-bg);
-}
-
-body.darkmode .nav-btn.complete,
-body.darkmode .header.half-height .lecture-nav a.nav-btn.complete,
-body.darkmode .revamped_lecture_player header.half-height .lecture-nav a.complete.nav-btn {
-    background: var(--yellow) !important;
-    color: var(--secondary-bg) !important;
-    border: 1px solid var(--primary-bg) !important;
-}
-
-body.darkmode .header.half-height .lecture-nav a.nav-btn.complete:hover,
-body.darkmode .nav-btn.complete:hover,
-body.darkmode .revamped_lecture_player header.half-height .lecture-nav a.complete.nav-btn:hover {
-    background: var(--secondary-bg) !important;
-    color: var(--yellow) !important;
-    transition: all linear 0.1s !important;
-}
-
-/* Previous button */
-body.darkmode .revamped_lecture_player header.half-height .lecture-nav a.nav-btn.previous {
-    background: var(--secondary-bg) !important;
-    color: var(--light-text) !important;
-    border: 1px solid var(--medium-text) !important;
-}
-
-body.darkmode .revamped_lecture_player header.half-height .lecture-nav a.nav-btn.previous:hover {
-    background: var(--yellow) !important;
-    color: var(--secondary-bg) !important;
-    transition: all linear 0.1s !important;
-}
-
-/* Section titles */
-body.darkmode .course-section .section-title,
-body.darkmode .revamped_lecture_player .course-section .section-title,
-body.darkmode .revamped_lecture_player .course-sidebar .row.lecture-sidebar .course-section .section-title {
-    background: var(--primary-bg) !important;
-    color: var(--light-text) !important;
-}
-
-body.darkmode .course-section ul.section-list .section-item .title-container,
-body.darkmode .revamped_lecture_player .course-sidebar .row.lecture-sidebar .course-section .title-container {
-    border-left: 1px solid var(--medium-text) !important;
-}
-
-/* Settings dropdown */
-body.darkmode .revamped_lecture_player header.half-height .lecture-left .settings-dropdown ul.dropdown-menu li {
-    color: var(--light-text) !important;
-    background: var(--secondary-bg) !important;
-    border-radius: 4px !important;
-}
-
-/* Lecture name and content */
-body.darkmode .lecture-name {
-    color: var(--mid-gray) !important;
-}
-
-body.darkmode .lecture-attachment:not(.lecture-attachment-type-video) ol li {
-    color: var(--gray-text) !important;
-}
-
-/* Lecture headings */
-body.darkmode h2#lecture_heading {
-    color: var(--light-text) !important;
-}
-
-body.darkmode h4.ql-align-center {
-    color: var(--light-text) !important;
-}
-
-/* Video player */
-body.darkmode .revamped_lecture_player .lecture-content .lecture-video {
-    background: var(--primary-bg) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-video .video-placeholder {
-    background: var(--secondary-bg) !important;
-}
-
-/* Text Content Body H3,H4,H5,H6*/
-body.darkmode .lecture-text-container h3,
-body.darkmode .lecture-text-container h4,
-body.darkmode .lecture-text-container h5,
-body.darkmode .lecture-text-container h6 {
-    color: var(--mid-gray) !important;
-}
-
-/* ========================= Preview Course Page ========================= */
-body.darkmode .block__curriculum__wrapper,
-body.darkmode .b-192580811-background_color,
-body.darkmode .b-192580807-background_color {
-    background-color: transparent !important;
-}
-
-body.darkmode .block__curriculum__wrapper h4 strong,
-body.darkmode .b-192580811-background_color h4 strong {
-    color: var(--mid-gray) !important;
-}
-
-body.darkmode .block__curriculum__section__title.b-192580807-section_name_background_color {
-    background: var(--secondary-bg) !important;
-    border-radius: 4px !important;
-    color: var(--gray-text) !important;
-    border-bottom: 1px solid var(--medium-text) !important;
-}
-
-body.darkmode .block__curriculum__section__list__item.b-192580807-lecture_name_background_color {
-    background: var(--primary-bg) !important;
-    border-radius: 2px !important;
-    border-bottom: 1px solid var(--medium-text) !important;
-}
-
-body.darkmode .block__pricing__plan__price {
-    color: var(--light-text) !important;
-}
-
-
-/* ========================= LECTURE ATTACHMENTS ========================= */
-body.darkmode .revamped_lecture_player .lecture-content .lecture-attachment .attachment-block {
-    background: var(--secondary-bg) !important;
-    border: 1px solid var(--medium-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-attachment .attachment-block .label {
-    color: var(--medium-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-attachment .attachment-block .attachment-name {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-attachment .attachment-block .attachment-name:hover {
-    color: var(--yellow) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-attachment .attachment-block-wrapper {
-    border: 1px solid var(--medium-text) !important;
-}
-
-body.darkmode .row.attachment,
-body.darkmode .revamped_lecture_player .lecture-content .lecture-attachment .attachment-pdf-embed .label,
-body.darkmode .lecture-content .lecture-attachment .attachment-pdf-embed .label {
-    margin-top: 5px !important;
-    background: var(--secondary-bg) !important;
-    color: var(--medium-text) !important;
-    border-bottom: none !important;
-}
-
-/* ========================= LECTURE TEXT CONTENT ========================= */
-body.darkmode .revamped_lecture_player .lecture-content .lecture-text {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-text p {
-    color: var(--gray-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-text a {
-    color: var(--yellow) !important;
-}
-
-body.darkmode .revamped_lecture_player .lecture-content .lecture-text a:hover {
-    color: var(--dark-yellow) !important;
-}
-
-/* ========================= LECTURE LIST ITEMS ========================= */
-body.darkmode .revamped_lecture_player .course-sidebar .course-section .section-item .lecture-name {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .course-sidebar .course-section .section-item .lecture-name:hover {
-    color: var(--yellow) !important;
-}
-
-body.darkmode .revamped_lecture_player .course-sidebar .course-section .section-item .duration {
-    color: var(--medium-text) !important;
-}
-
-body.darkmode .revamped_lecture_player .course-sidebar .course-section .section-item .status-icon {
-    color: var(--yellow) !important;
-}
-
-/* ========================= COMMENTS ========================= */
-body.darkmode .comments .comments__wrapper .comments__block--student .comments__block-box {
-    background: var(--secondary-bg) !important;
-    border: 1px solid var(--secondary-bg) !important;
-}
-
-body.darkmode .comments.attachment-block-wrapper {
-    border: 1px solid var(--medium-text) !important;
-}
-
-body.darkmode .attachment-block-label {
-    background: var(--medium-text) !important;
-}
-
-body.darkmode .comment-arrow-border {
-    border-right-color: var(--secondary-bg) !important;
-}
-
-body.darkmode .comments .comment-arrow {
-    border-right-color: var(--medium-text) !important;
-}
-
-body.darkmode .comments__block-box__meta-name {
-    color: var(--dark-yellow) !important;
-}
-
-body.darkmode .comments__block-box__meta-time {
-    color: var(--medium-text) !important;
-}
-
-body.darkmode .comments__block-box__body {
-    color: var(--light-text) !important;
-}
-
-/* Comment editor */
-body.darkmode .comment-editor {
-    background: var(--primary-bg) !important;
-    color: var(--light-text) !important;
-    border: 2px solid var(--primary-bg) !important;
-    border-radius: 5px !important;
-    margin-top: 25px;
-}
-
-body.darkmode .comment-editor textarea {
-    background: transparent !important;
-    color: var(--light-text) !important;
-    border: none !important;
-}
-
-body.darkmode .comment-editor .attachments-editor {
-    background: var(--dark-bg) !important;
-    color: var(--dark-yellow) !important;
-    border: none !important;
-}
-
-body.darkmode .comments-pagination-link {
-    color: var(--medium-text) !important;
-}
-
-body.darkmode .comments-pagination-link:hover {
-    color: var(--dark-yellow) !important;
-}
-
-/* Owner Comments */
-body.darkmode .comments .comments__wrapper .comments__block--owner .comments__block-box,
-body.darkmode .comments .comments__wrapper .comments__block--author .comments__block-box {
-    background: var(--secondary-bg) !important;
-    border: 1px solid var(--secondary-bg) !important;
-}
-
-body.darkmode .comments .comments__wrapper .comments__block--owner .comments__block-box__meta-tag-instructor,
-body.darkmode .comments .comments__wrapper .comments__block--author .comments__block-box__meta-tag-instructor {
-    border: 1px solid var(--light-text) !important;
-    color: var(--secondary-bg) !important;
-    background-color: var(--yellow) !important;
-}
-
-
-
-/* ========================= CERTIFICATE ========================= */
-body.darkmode .certificate.jsx-633761444 {
-    background: var(--secondary-bg) !important;
-}
-
-/* ========================= QUIZ ========================= */
-body.darkmode .quiz-progress {
-    color: var(--medium-text) !important;
-}
-
-body.darkmode .quiz-question {
-    color: var(--light-text) !important;
-}
-
-body.darkmode .quiz-answer {
-    background: var(--dark-bg) !important;
-    color: var(--light-text) !important;
-}
-
-/* ========================= PRE & Code ========================= */
-body.darkmode pre,
-body.darkmode .ql-syntax {
+    color: var(--text-light);
+}
+
+/* ========================= TEXT ELEMENTS ========================= */
+body.darkmode p,
+body.darkmode span,
+body.darkmode label,
+body.darkmode strong,
+body.darkmode em,
+body.darkmode b,
+body.darkmode i {
+    color: var(--gray-text);
+}
+
+/* ========================= LISTS ========================= */
+body.darkmode ul,
+body.darkmode ol {
+    color: var(--text-light);
     background-color: var(--primary-bg);
-    color: var(--mid-gray);
-    border: 1px solid var(--medium-text);
 }
 
-body.darkmode code,
-body.darkmode .lecture-text-container p code {
+body.darkmode li {
+    color: var(--text-gray);
+}
+
+/* ========================= DROPDOWN MENU ========================= */
+body.darkmode select {
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+    border: 1px solid var(--text-gray);
+}
+
+body.darkmode option {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+body.darkmode .dropdown-menu>li {
+    color: var(--text-gray);
+}
+
+/* ========================= INPUT FIELDS ========================= */
+body.darkmode input,
+body.darkmode textarea {
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+    border: 1px solid var(--text-gray);
+}
+
+body.darkmode input::placeholder,
+body.darkmode textarea::placeholder {
+    color: var(--text-medium);
+}
+
+/* ========================= BUTTONS ========================= */
+body.darkmode button {
+    background-color: var(--accent-yellow);
+    color: var(--dark-bg);
+    cursor: pointer;
+    border: 1px solid var(--accent-dark-yellow);
+    border-radius: 2px !important;
+    transition: background-color 0.3s;
+}
+
+body.darkmode button:focus {
+    background-color: var(--accent-dark-yellow);
+}
+
+body.darkmode button:hover {
+    background-color: var(--accent-dark-yellow);
+}
+
+/* default button: */
+body.darkmode .btn-default {
+    background-color: var(--secondary-bg);
+    color: var(--accent-dark-yellow);
+    border-radius: 2px;
+}
+
+body.darkmode .btn-default:hover {
+    background-color: var(--accent-yellow);
+    color: var(--primary-bg);
+}
+
+/* primary-button: */
+body.darkmode .btn-primary {
+    background: none;
+    background-color: var(--accent-yellow) !important;
+    color: var(--primary-bg) !important;
+    border: 1px solid var(--dark-bg) !important;
+}
+
+body.darkmode .btn-primary:focus,
+body.darkmode .btn-primary:hover {
     background-color: var(--secondary-bg) !important;
-    color: #2fbd94 !important;
+    color: var(--accent-yellow) !important;
+    border: 1px solid var(--primary-bg) !important;
 }
 
-body.darkmode .lecture-text-container p span,
-body.darkmode .lecture-text-container p strong {
-    background-color: rgba(255, 210, 60, 0.724) !important;
-    color: var(--secondary-bg) !important;
+
+
+/* ========================= TABLES ========================= */
+body.darkmode table {
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+    border-collapse: collapse;
 }
 
-/* ========================= ScrollBar ========================= */
+body.darkmode th,
+body.darkmode td {
+    border: 1px solid var(--text-gray);
+}
 
-/* ScrollBar General and in lecture page */
-body.darkmode::-webkit-scrollbar,
-body.darkmode .course-sidebar::-webkit-scrollbar,
-body.darkmode section.lecture-page-layout::-webkit-scrollbar {
-    width: 8px !important;
+body.darkmode th {
+    background-color: var(--dark-bg);
+}
+
+/* ========================= CODE BLOCKS ========================= */
+body.darkmode code,
+body.darkmode pre {
+    background-color: var(--secondary-bg);
+    color: var(--text-gray);
+    border-radius: 4px;
+    border: none;
+}
+
+/* ========================= HORIZONTAL RULE ========================= */
+body.darkmode hr {
+    border-color: var(--text-medium);
+}
+
+/* ========================= BLOCKQUOTE ========================= */
+body.darkmode blockquote {
+    border-left: 4px solid var(--accent-yellow);
+    background-color: var(--secondary-bg);
+    color: var(--gray-text);
+}
+
+/* ========================= DETAILS & SUMMARY ========================= */
+body.darkmode details {
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+}
+
+body.darkmode summary {
+    color: var(--accent-yellow);
+    cursor: pointer;
+}
+
+/* ========================= SECTIONS & CONTAINERS ========================= */
+body.darkmode div,
+body.darkmode section,
+body.darkmode article,
+body.darkmode aside,
+body.darkmode main,
+body.darkmode header {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+}
+
+/* Card */
+body.darkmode .card {
+    background-color: var(--secondary-bg);
+    box-shadow: var(--box-shadow);
+}
+
+/* ========================= SCROLLBAR ========================= */
+
+body.darkmode::-webkit-scrollbar {
+    width: 8px;
 }
 
 /* Track */
-body.darkmode::-webkit-scrollbar-track,
-body.darkmode .course-sidebar::-webkit-scrollbar-track,
-body.darkmode section.lecture-page-layout::-webkit-scrollbar-track {
-    background: var(--scrollbar-bg) !important;
+body.darkmode::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
     margin: 1px 0;
 }
 
 /* Thumb */
-body.darkmode::-webkit-scrollbar-thumb,
-body.darkmode .course-sidebar::-webkit-scrollbar-thumb,
-body.darkmode section.lecture-page-layout::-webkit-scrollbar-thumb {
-    background-color: var(--medium-text) !important;
-    border-radius: 10px !important;
-    border: 2px solid var(--scrollbar-bg) !important;
-    min-height: 30px !important;
+body.darkmode::-webkit-scrollbar-thumb {
+    background-color: var(--text-medium);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-bg);
+    min-height: 30px;
 }
 
 /* Hover effect */
-body.darkmode::-webkit-scrollbar-thumb:hover,
-body.darkmode .course-sidebar::-webkit-scrollbar-thumb:hover,
-body.darkmode section.lecture-page-layout::-webkit-scrollbar-thumb:hover {
-    background: var(--light-text) !important;
+body.darkmode::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
 }
 
-/* ========================= Footer ========================= */
+/* ========================= End GLOBAL STYLES ========================= */
 
-body.darkmode .footer__inner {
-    color: var(--gray-text);
+
+/* ========================= courses Page ========================= */
+
+/* Header: */
+body.darkmode footer,
+body.darkmode header {
+    box-shadow: var(--box-shadow);
+}
+
+body.darkmode header div {
+    background-color: var(--primary-bg);
+}
+
+/* Header:Logo */
+body.darkmode header .btstrp-navbar-brand.header-logo img {
+    max-height: 70%;
+    max-width: 100%;
+}
+
+/* Header:Menu */
+/* body.darkmode header .nav .navbar-nav>li {
+    background-color: var(--secondary-bg);
+    padding: 2px;
+} */
+
+/* Header:Menu:button */
+body.darkmode header .navbar-right .btn-primary {
+    margin: 0px 0px 0px 15px !important;
+}
+
+/* Header:Menu:List*/
+
+body.darkmode header .navbar-right {
+    /* background-color: #efba0b; */
+    margin: 10px 0px 10px 0px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+}
+
+body.darkmode header .navbar-right li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+body.darkmode header .nav.navbar-nav>li .fedora-navbar-link {
+    color: var(--text-light) !important;
+    height: 30px;
+    background-color: transparent;
+    padding: 0px 5px 0px 5px;
+    margin: 3px 0px 0px 5px;
+}
+
+body.darkmode header .nav.navbar-nav>li .fedora-navbar-link:hover {
+    color: var(--accent-yellow) !important;
+    background-color: var(--secondary-bg) !important;
+    border-radius: 5px;
+}
+
+/* header : dropdown menu : more btn & categories and authors */
+
+body.darkmode .open>.dropdown-menu {
+    text-align: right;
+    font-size: 14px;
+}
+
+body.darkmode .open>.dropdown-menu li:focus,
+body.darkmode .open>.dropdown-menu li:hover {
+    background-color: var(--dark-bg);
+}
+
+body.darkmode .open>.dropdown-menu li a {
+    color: var(--text-light);
+}
+
+body.darkmode .open>.dropdown-menu li:focus a,
+body.darkmode .open>.dropdown-menu li:hover a {
+    color: var(--accent-yellow);
+    background-color: transparent;
+}
+
+/* categories and authors header */
+body.darkmode .btn-default.btn-lg.btn-course-filter.dropdown-toggle {
+    color: var(--accent-dark-yellow) !important;
+}
+
+
+
+/* Footer: */
+body.darkmode footer div {
+    background-color: var(--primary-bg);
+}
+
+/* body:dropdown-menu*/
+body.darkmode body.darkmode .view-directory.course-directory .container .dropdown-menu {
+    color: var(--text-gray) !important;
+}
+
+
+/* body.darkmode .dropdown-menu li:hover {
+    color: var(--primary-bg);
+    background-color: var(--accent-yellow);
+} */
+
+/* body:*/
+body.darkmode .view-directory.course-directory,
+body.darkmode .view-directory.course-directory .container,
+body.darkmode .view-directory.course-directory .row,
+body.darkmode .view-directory.course-directory .row .search,
+body.darkmode .view-directory.course-directory .row .course-list .list,
+body.darkmode .view-directory.course-directory {
+    background-color: var(--primary-bg);
+}
+
+/* body: row search */
+body.darkmode .view-directory.course-directory .container .row .course-filter {
+    background-color: var(--secondary-bg);
+}
+
+/* body:row search: input */
+body.darkmode .view-directory.course-directory .row .search {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--primary-bg);
+}
+
+body.darkmode .view-directory.course-directory .row.search .input-group-btn button:hover {
+    background-color: var(--accent-yellow);
+    color: var(--primary-bg) !important;
+}
+
+
+/* body:Course-list */
+body.darkmode .view-directory.course-directory .container .row div {
+    background-color: transparent;
+}
+
+/* body:Course-list:Course-listing */
+body.darkmode .view-directory.course-directory .container .row .course-listing {
+    border: 2px solid var(--secondary-bg);
+    background-color: var(--secondary-bg);
+    box-shadow: var(--box-shadow);
+}
+
+body.darkmode .view-directory.course-directory .container .row .course-listing:hover {
+    border: 3px solid var(--dark-bg);
+}
+
+/* title: */
+body.darkmode .view-directory.course-directory .container .row .course-listing .course-listing-title {
+    color: var(--text-gray);
+}
+
+/* subtitle: */
+body.darkmode .view-directory.course-directory .container .row .course-listing .course-listing-subtitle {
+    color: var(--text-medium);
+}
+
+/* extra info: (price, instructor info*/
+body.darkmode .view-directory.course-directory .container .row .course-listing .course-listing-extra-info .course-author-name {
+    color: var(--text-gray);
+}
+
+/* price */
+body.darkmode .view-directory.course-directory .container .row .course-listing .course-listing-extra-info .course-progress,
+body.darkmode .view-directory.course-directory .container .row .course-listing .course-listing-extra-info .percentage,
+body.darkmode .view-directory.course-directory .container .row .course-listing .course-listing-extra-info .course-price {
+    color: var(--accent-dark-yellow);
+}
+
+/* progress */
+body.darkmode .view-directory.course-directory .container .row .course-listing .course-listing-extra-info .course-progress {
+    color: var(--text-medium);
+}
+
+
+body.darkmode .view-directory.course-directory .container .row .course-listing:hover .course-listing-title {
+    color: var(--accent-yellow);
+}
+
+/* progress bar */
+/* background */
+body.darkmode .view-directory.course-directory .container .row .course-listing .progressbar {
+    background-color: var(--primary-bg);
+}
+
+/* fill color */
+body.darkmode .view-directory.course-directory .container .row .course-listing .progressbar .progressbar-fill {
+    background-color: var(--accent-yellow);
+}
+
+/* ========================= End courses Page ========================= */
+
+
+/* ========================= navbar__header in Anther Pages ========================= */
+/* Logo */
+body.darkmode .navbar__header .navbar__header__logolink img {
+    width: 42px;
+    height: 42px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/*navbar menu list */
+
+/* inner menu : more btn */
+
+body.darkmode .inner-menu {
+    background-color: var(--primary-bg);
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    border-radius: 4px;
+    margin: 2px 0 0;
+    padding: 5px 0;
+    float: left;
+    min-width: 160px;
+    z-index: 1000;
+    list-style: none;
+}
+
+body.darkmode .inner-menu li:hover {
+    background-color: var(--dark-bg);
+    font-size: 14px;
+}
+
+/*navbar menu list li */
+body.darkmode .navbar__menu__list.hidden>li {
+    margin: 3px;
+    padding: 5px;
+    text-align: right;
+}
+
+body.darkmode .navbar__menu__list.hidden>li:hover {
+    background-color: var(--secondary-bg);
+    color: var(--accent-yellow);
+    border-radius: 4px;
+}
+
+body.darkmode .navbar__menu__list.hidden>li a {
+    color: var(--text-light);
+    font-size: 14px;
+    margin: 0px;
+}
+
+body.darkmode .navbar__menu__list.hidden>li a:focus,
+body.darkmode .navbar__menu__list.hidden>li a:hover {
+    color: var(--accent-yellow);
+    text-decoration: none;
+}
+
+/*navbar menu trigger */
+body.darkmode .menu-trigger {
+    background-color: transparent;
+    color: var(--text-light);
+    border: none;
+    margin: 0px;
+}
+
+body.darkmode .menu-trigger:hover {
+    background-color: transparent;
+    color: var(--accent-yellow);
+}
+
+body.darkmode .menu-trigger:focus {
+    background-color: transparent;
+    color: var(--accent-yellow);
+}
+
+
+
+
+/* preview some content from course before payed */
+body.darkmode .block__curriculum .block_curriculum_sections section div,
+body.darkmode .block__curriculum .block_curriculum_sections section .block__curriculum__section__list li {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--scrollbar-bg);
+}
+
+/* Enroll Button in course payed */
+body.darkmode .block__pricing__button-wrapper .block__pricing__button {
+    background-color: var(--accent-yellow);
+    color: var(--primary-bg);
+}
+
+body.darkmode .block__pricing__button-wrapper .block__pricing__button:hover {
+    background-color: var(--accent-dark-yellow);
+}
+
+
+/* Image in Anther Page */
+body.darkmode main img {
+    border-radius: 10px !important;
+}
+
+/* pay way page */
+body.darkmode .block__text-with-image-grid.b-182513728-background_color {
+    background-color: transparent;
+}
+
+/* roadmap faqs page */
+body.darkmode .faq-item {
+    border-bottom: 2px solid var(--scrollbar-bg);
+}
+
+body.darkmode .faq-question:hover {
+    color: var(--accent-yellow);
+}
+
+
+/* home page sections image background */
+body.darkmode .block__image-with-text.b-191409374-background_color,
+body.darkmode .block__featured-products.b-182380346-background_color,
+body.darkmode .block__image-with-text.b-191409400-background_color {
+    background-color: transparent;
+}
+
+/* some review students card div */
+body.darkmode .card .card-header {
+    margin-left: 20px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+body.darkmode .card .card-text {
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* ========================= End navbar__header in Anther Pages ========================= */
+
+/* ========================= bundle courses or Course Pay ========================= */
+
+/* bundle courses */
+body.darkmode .featured-product-card.b-182380346-card_background_color {
+    background-color: var(--secondary-bg);
+    box-shadow: var(--box-shadow);
+    border: 2px solid var(--secondary-bg);
+}
+
+body.darkmode .featured-product-card:hover {
+    border: 3px solid var(--dark-bg);
+}
+
+body.darkmode .block__featured-products .b-182380346-card_text_alignment .featured-product-card__content__title {
+    line-height: 25px;
+    /* padding: 16px 16px 4px 16px; */
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    max-height: 65px;
+}
+
+body.darkmode .featured-product-card:hover .featured-product-card__content__title {
+    color: var(--accent-yellow);
+}
+
+/* featured-product-card: progressbar */
+
+
+body.darkmode .featured-product-card__progressbar {
+    background: var(--dark-bg);
+    margin-top: 15px;
+    text-align: right;
+    font-size: 0.7em;
+    height: 8px;
+    line-height: 40px;
+    padding: 0px;
+    width: 100%;
+}
+
+/* fill */
+body.darkmode .featured-product-card__progressbar-fill {
+    background: var(--accent-yellow);
+    height: 8px;
+}
+
+/* subtitle */
+body.darkmode .featured-product-card__content__subtitle {
+    color: var(--text-medium);
+    margin-top: 10px;
+    padding: 5px 16px;
+    font-weight: 200;
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 45px;
+    word-wrap: break-word;
+}
+
+/* author name */
+body.darkmode .featured-product-card__author .featured-product-card__author__name {
+    color: var(--text-gray);
+}
+
+/* price */
+body.darkmode .featured-product-card__price {
+    color: var(--accent-yellow);
+}
+
+/* progress complete */
+body.darkmode .featured-product-card__progress {
+    font-size: 12px;
+    color: var(--text-medium);
+}
+
+body.darkmode .featured-product-card__progress span {
+    font-size: 14px;
+    color: var(--text-highlight);
+}
+
+/* pricing less than arrow icon */
+body.darkmode .block__pricing__plan__description__show-button__icon::before {
+    margin-left: 3px;
+}
+
+body.darkmode .block__pricing__plan__description__show-button__icon::after {
+    margin-left: 6px;
+}
+
+
+body.darkmode .block__pricing__plan__description__show-button__icon::before,
+body.darkmode .block__pricing__plan__description__show-button__icon::after {
+    background-color: var(--accent-yellow);
+}
+
+/* description */
+body.darkmode .block__pricing__plan__description p span {
+    background-color: var(--dark-bg) !important;
+}
+
+
+/*block__pricing__plan: radio indicator */
+body.darkmode .block__pricing__plan__radio__custom-indicator {
+    border: 1px solid var(--accent-dark-yellow);
+}
+
+body.darkmode .block__pricing__plan__radio-wrapper:focus .block__pricing__plan__radio__custom-indicator,
+body.darkmode .block__pricing__plan__radio-wrapper:hover .block__pricing__plan__radio__custom-indicator {
+    border: 1px solid var(--accent-yellow);
+    box-shadow: none;
+}
+
+body.darkmode .block__pricing__plan__radio__custom-indicator::after {
+    background-color: var(--accent-yellow);
+}
+
+body.darkmode .block__pricing__plan__radio:checked+.block__pricing__plan__radio__custom-indicator {
+    border: 1px solid var(--accent-yellow);
+}
+
+/* ========================= End bundle courses and Course Pay ========================= */
+
+/* ========================= courses content Page ========================= */
+
+/* Nav bar */
+body.darkmode .wrap.jsx-2501835884 {
+    box-shadow: var(--box-shadow);
+    background-color: var(--primary-bg);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* nav bar container */
+body.darkmode .nav.jsx-2501835884 {
+    padding: 0px;
+    min-height: 40px;
+    margin: 10px auto 10px auto;
+}
+
+/* logo */
+body.darkmode .logo.jsx-2501835884 {
+    width: 42px;
+    height: 42px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* profile settings list */
+body.darkmode ul.jsx-116055841 {
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+    font-size: 16px;
+    text-align: right;
+    border: 1px solid var(--dark-bg);
+}
+
+body.darkmode ul.jsx-116055841 li:hover {
+    background-color: var(--primary-bg) !important;
+}
+
+/* banner */
+body.darkmode .banner.jsx-1640592643 {
+    background-color: var(--secondary-bg);
+}
+
+/* right side */
+body.darkmode .jsx-1640592643 .right {
+    background-color: var(--primary-bg);
+}
+
+
+/* body */
+body.darkmode .columns.jsx-4204861187 {}
+
+/* right side : jsx-4204861187 */
+/* complete progress  and incomplete progress */
+
+body.darkmode [class^="jsx-"].progress {
+    background: var(--secondary-bg);
+}
+
+/* progressBar body*/
+body.darkmode [class^="jsx-"].progressBar {
+    background-color: var(--primary-bg);
+}
+
+body.darkmode [class^="jsx-"].finished {
+    background-color: var(--accent-yellow);
+}
+
+/* instructor */
+body.darkmode .instructor.jsx-1343021134 {
+    background-color: var(--secondary-bg);
+}
+
+body.darkmode .instructor.jsx-1343021134 ul,
+body.darkmode .instructor.jsx-1343021134 div {
+    background-color: transparent;
+}
+
+/* info */
+body.darkmode .image-info.jsx-1343021134 {
+    background-color: var(--primary-bg) !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* certificate */
+body.darkmode .certificate.jsx-633761444 {
+    background-color: var(--secondary-bg);
+}
+
+
+/* Left Side: jsx-4204861187*/
+body.darkmode .slim-section.jsx-3137867545 {
+    background-color: var(--secondary-bg);
+}
+
+body.darkmode .section-header.jsx-4255369697 {
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+}
+
+body.darkmode .section-header.jsx-4255369697 div {
+    background-color: transparent;
+}
+
+/* header */
+body.darkmode .heading.jsx-4255369697 {
+    color: var(--text-light);
+}
+
+/* completion */
+body.darkmode .completion.jsx-1998191207 {
+    color: var(--text-gray);
+}
+
+body.darkmode .completion.jsx-1998191207 svg {
+    color: var(--accent-yellow);
+}
+
+/* coulapse  icon*/
+body.darkmode .icon.jsx-4255369697 {
+    color: var(--accent-yellow);
+}
+
+/* lectures */
+body.darkmode .lectures.jsx-3137867545 {
+    background-color: var(--secondary-bg);
+    border-radius: 0px 0px 4px 4px;
+}
+
+/* bar, Item */
+body.darkmode .bar.jsx-2138578525 {
+    background-color: var(--primary-bg);
+    border: none;
+}
+
+/* icon status */
+body.darkmode .status-icon.jsx-2138578525 {
+    color: var(--accent-yellow);
+}
+
+/* info */
+body.darkmode .info.jsx-2138578525 svg,
+body.darkmode .info.jsx-2138578525 {
+    background-color: var(--secondary-bg);
+    padding: 2px;
+    color: var(--text-dark-yellow);
+}
+
+/* ========================= End courses content Page ========================= */
+
+
+/* ========================= Lectures Page ========================= */
+
+/* Scroll bar */
+body.darkmode .course-sidebar::-webkit-scrollbar,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+body.darkmode .course-sidebar::-webkit-scrollbar-track,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+    margin: 0px;
+}
+
+/* Thumb */
+body.darkmode .course-sidebar::-webkit-scrollbar-thumb,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar-thumb {
+    background-color: var(--text-medium);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-bg);
+    min-height: 30px;
+}
+
+/* Hover effect */
+body.darkmode .course-sidebar::-webkit-scrollbar:hover,
+body.darkmode section.lecture-page-layout::-webkit-scrollbar:hover {
+    background: var(--text-light);
+}
+
+/* Header */
+/*Header lecture-left */
+body.darkmode .nav-icon-back svg,
+body.darkmode .settings-dropdown svg {
+    color: var(--text-light);
+}
+
+body.darkmode .settings-dropdown:hover svg,
+body.darkmode .nav-icon-back:hover svg {
+    color: var(--accent-yellow);
+}
+
+body.darkmode .lecture-left .settings-dropdown {
+    border-right: 2px solid var(--dark-bg) !important;
+}
+
+/* complete btn */
+body.darkmode header.half-height .lecture-nav a.complete.nav-btn {
+    background-color: var(--accent-dark-yellow);
+    color: var(--primary-bg);
+    border: 2px solid var(--dark-bg);
+}
+
+body.darkmode header.half-height .lecture-nav a.complete.nav-btn:focus,
+body.darkmode header.half-height .lecture-nav a.complete.nav-btn:hover {
+    background-color: var(--secondary-bg);
+    color: var(--accent-yellow);
+}
+
+/* previous btn*/
+body.darkmode header.half-height .lecture-nav a.nav-btn {
+    background-color: var(--secondary-bg);
+    color: var(--text-gray);
+    border: 2px solid var(--dark-bg);
+}
+
+body.darkmode header.half-height .lecture-nav a.nav-btn:focus,
+body.darkmode header.half-height .lecture-nav a.nav-btn:hover {
+    color: var(--text-light);
+    border: 2px solid var(--accent-yellow);
+}
+
+
+/* Header lecture-right */
+
+/* settings drop list */
+body.darkmode header.half-height .lecture-left .settings-dropdown ul.dropdown-menu {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--dark-bg);
+}
+
+body.darkmode header.half-height .lecture-left .settings-dropdown ul.dropdown-menu div {
+    background-color: transparent;
+}
+
+body.darkmode header.half-height .lecture-left .settings-dropdown ul.dropdown-menu li {
+    color: var(--text-light);
+    border-bottom: 1px solid var(--dark-bg);
+}
+
+body.darkmode header.half-height .lecture-left .settings-dropdown ul.dropdown-menu li:focus,
+body.darkmode header.half-height .lecture-left .settings-dropdown ul.dropdown-menu li:hover {
+    background-color: var(--primary-bg);
+    color: var(--accent-yellow);
+}
+
+
+/* lecture-page-layout */
+/* course sidebar */
+/* .revamped_lecture_player .course-sidebar */
+/* Head */
+body.darkmode .course-progress,
+body.darkmode .course-sidebar-head {
+    background-color: var(--secondary-bg);
+}
+
+body.darkmode .course-sidebar {
+    background-color: transparent;
+    border-right: 2px solid var(--dark-bg);
+}
+
+body.darkmode .course-sidebar .course-progress {
+    border-bottom: 2px solid var(--dark-bg) !important;
+}
+
+/* sticky side bar */
+body.darkmode .course-sidebar .course-progress.lecture-page.sticky {
+    background-color: var(--accent-dark-yellow) !important;
+}
+
+body.darkmode .course-sidebar .course-progress.lecture-page.sticky div {
+    color: var(--primary-bg);
+}
+
+/* progress bar completed course */
+body.darkmode .course-progress .course-progress-percentage {
+    background-color: transparent;
+    color: var(--text-gray);
+}
+
+body.darkmode .course-progress .progressbar-fill {
+    background: var(--accent-yellow);
+}
+
+/* course-section */
+body.darkmode .course-section .section-title,
+body.darkmode .col-sm-12 .course-section {
+    background-color: var(--secondary-bg) !important;
+}
+
+/* lecture list */
+body.darkmode .course-section ul.section-list .section-item .item {
+    background-color: var(--primary-bg);
+    border-bottom: 2px solid var(--primary-bg);
+}
+
+/* hover on lecture */
+body.darkmode .course-section ul.section-list .section-item .item:hover {
+    background-color: var(--dark-bg) !important;
+}
+
+
+/* title */
+body.darkmode .course-sidebar .row.lecture-sidebar .course-section .title-container {
+    background-color: transparent;
+    border-left: 2px solid var(--secondary-bg);
+}
+
+/* status icon (complete & incomplete) */
+
+
+body.darkmode .course-section ul.section-list .section-item.completed .status-icon {
+    background-color: var(--accent-yellow);
+
+}
+
+body.darkmode .course-section ul.section-list .section-item.incomplete .status-icon {
+    box-shadow: inset 0px 0px 0px 2px var(--accent-yellow);
+}
+
+/* hover */
+body.darkmode .course-section ul.section-list .section-item.completed .item:hover .status-icon {
+    background-color: var(--accent-yellow) !important;
+    box-shadow: inset 0px 0px 0px 2px var(--accent-dark-yellow) !important;
+}
+
+body.darkmode .course-section ul.section-list .section-item.incomplete:hover .status-icon {
+    box-shadow: inset 0px 0px 0px 2px var(--accent-dark-yellow) !important;
+}
+
+
+
+/* next lecture */
+body.darkmode .course-section ul.section-list .section-item.next-lecture .item {
+    background-color: var(--dark-bg);
+}
+
+body.darkmode .course-section ul.section-list .section-item.next-lecture .status-icon {
+    box-shadow: inset 0px 0px 0px 2px var(--accent-dark-yellow);
+    background-color: var(--accent-yellow);
+}
+
+body.darkmode .course-section ul.section-list .section-item.next-lecture .item:hover .status-icon {
+    background-color: var(--accent-dark-yellow);
+    box-shadow: inset 0px 0px 0px 2px var(--accent-yellow) !important
+}
+
+
+/* Lecture Body Page */
+body.darkmode .lecture-content.course-mainbar {
+    background-color: transparent;
+}
+
+/* Lecture title */
+body.darkmode .course-mainbar h2.section-title {
+    /* background-color: var(--secondary-bg);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow); */
+    padding: 10px;
+    border-bottom: 2px solid var(--secondary-bg);
+}
+
+/* images in content page */
+body.darkmode .lecture-content.course-mainbar img.is-loaded {
+    border-radius: 5px;
+}
+
+/* lecture complete btn*/
+body.darkmode .lecture-content a.complete.lecture-complete {
+    background-color: var(--accent-dark-yellow);
+    border: 2px solid var(--dark-bg);
+    color: var(--primary-bg);
+}
+
+body.darkmode .lecture-content a.complete.lecture-complete:focus,
+body.darkmode .lecture-content a.complete.lecture-complete:hover {
+    background-color: var(--secondary-bg);
+    border: 2px solid var(--dark-bg);
+    color: var(--accent-yellow);
+}
+
+/* lecture attachment */
+body.darkmode .lecture-content .lecture-attachment .attachment {
+    background-color: var(--secondary-bg);
+    border-radius: 4px;
+    border-bottom: none;
+    margin-bottom: 4px;
+}
+
+/* Lecture PDF embed */
+/* label */
+body.darkmode .lecture-content .lecture-attachment .attachment-pdf-embed .label {
+    background-color: var(--secondary-bg);
+    margin-bottom: 4px;
+    color: var(--text-light);
+    border-radius: 4px;
+}
+
+/* content pdf viewer*/
+body.darkmode .lecture-content .lecture-attachment .attachment-pdf-embed .wrapper {
+    margin-bottom: 4px;
+    border-radius: 4px;
+    border: none;
+}
+
+/* Quiz Blok */
+body.darkmode .lecture-content .lecture-attachment .attachment-block-wrapper.quiz-wrapper {
+    background-color: var(--secondary-bg);
+    /* border: 2px solid var(--dark-bg); */
+    border: none;
+}
+
+body.darkmode .lecture-content .lecture-attachment .attachment-block-wrapper.quiz-wrapper div,
+body.darkmode .lecture-content .lecture-attachment .attachment-block-wrapper.quiz-wrapper article {
+    background-color: transparent;
+}
+
+/* label */
+body.darkmode .lecture-content .lecture-attachment .attachment-block-wrapper .attachment-block-label {
+    background-color: var(--accent-dark-yellow) !important;
+    color: var(--primary-bg);
+}
+
+/* quiz answer btn*/
+body.darkmode .quiz-wrapper .quiz .quiz-answer-container .quiz-answer {
+    background-color: var(--scrollbar-bg);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+
+}
+
+body.darkmode .quiz-wrapper .quiz .quiz-answer-container .quiz-answer:hover,
+body.darkmode .quiz-wrapper .quiz .quiz-answer-container .quiz-answer:focus {
+    border: 1px solid var(--accent-yellow);
+}
+
+/* Control btn */
+/* body.darkmode .quiz-controls button.pull-right:focus {
+    border: 1px solid var(--primary-bg) !important;
+} */
+
+
+/* Comments */
+body.darkmode .lecture-content .lecture-attachment .attachment-block-wrapper.comments {
+    background-color: var(--secondary-bg);
+    border: none;
+}
+
+/* post a comment block */
+body.darkmode .comments .comments__wrapper {
+    background-color: var(--scrollbar-bg);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* div inside comment block */
+body.darkmode .comments .comments__wrapper div {
+    background-color: transparent;
+}
+
+body.darkmode .comments .comments__wrapper .comments__block {
+    background-color: transparent;
+    padding: 5px;
+}
+
+/* profile */
+body.darkmode .comments .comments__wrapper .comments__block .commenter-profile img.gravatar {
+    border: 3px solid var(--accent-dark-yellow);
+}
+
+/* comment write block */
+body.darkmode .comments .comments__wrapper .comments__block--student .comments__block-box {
+    background-color: var(--secondary-bg);
+    border-radius: 4px;
+    border: none;
+}
+
+/* text area */
+body.darkmode .comments .comments__wrapper .comments__block-box .comment-editor textarea {
+    width: 100%;
+    background-color: var(--scrollbar-bg);
+    border: 1px 1px 0px 1px solid var(--text-medium);
+    padding: 12px;
+    color: var(--text-light);
+    border-radius: 4px;
+    resize: none;
+    transition: border-color 0.3s;
+    margin-top: 10px;
+}
+
+/* attachments btn */
+
+body.darkmode .comments .comments__wrapper .comments__block-box .comment-editor .attachments-editor {
+    background-color: var(--scrollbar-bg);
+    border: none;
+    margin: 0px;
+}
+
+body.darkmode .comments .comments__wrapper .comments__block-box .comment-editor .attachments-editor ul {
+    background-color: transparent;
+}
+
+/* form select  attachments */
+/* body.darkmode .fp__wrapper {
+    background-color: var(--primary-bg);
+} */
+
+/* post comment btn */
+body.darkmode .comments .comments__wrapper .comments__block-box input[type='submit'] {
+    border-radius: 4px !important;
+}
+
+/* users comments */
+/* time */
+body.darkmode .comments .comments__wrapper .comments__block-box__meta-time {
+    color: var(--accent-dark-yellow);
+}
+
+body.darkmode .comments .comments__wrapper .comments__block-box__body {
+    color: var(--text-gray);
+}
+
+/* load more */
+body.darkmode .comments .comments__heading {
+    background-color: transparent;
 }
