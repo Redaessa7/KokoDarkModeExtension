@@ -347,6 +347,34 @@ body.darkmode header .nav.navbar-nav>li .fedora-navbar-link:hover {
     border-radius: 5px;
 }
 
+/* header : dropdown menu : more btn & categories and authors */
+
+body.darkmode .open>.dropdown-menu {
+    text-align: right;
+    font-size: 14px;
+}
+
+body.darkmode .open>.dropdown-menu li:focus,
+body.darkmode .open>.dropdown-menu li:hover {
+    background-color: var(--dark-bg);
+}
+
+body.darkmode .open>.dropdown-menu li a {
+    color: var(--text-light);
+}
+
+body.darkmode .open>.dropdown-menu li:focus a,
+body.darkmode .open>.dropdown-menu li:hover a {
+    color: var(--accent-yellow);
+    background-color: transparent;
+}
+
+/* categories and authors header */
+body.darkmode .btn-default.btn-lg.btn-course-filter.dropdown-toggle {
+    color: var(--accent-dark-yellow) !important;
+}
+
+
 
 /* Footer: */
 body.darkmode footer div {
@@ -464,6 +492,26 @@ body.darkmode .navbar__header .navbar__header__logolink img {
 
 /*navbar menu list */
 
+/* inner menu : more btn */
+
+body.darkmode .inner-menu {
+    background-color: var(--primary-bg);
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    border-radius: 4px;
+    margin: 2px 0 0;
+    padding: 5px 0;
+    float: left;
+    min-width: 160px;
+    z-index: 1000;
+    list-style: none;
+}
+
+body.darkmode .inner-menu li:hover {
+    background-color: var(--dark-bg);
+    font-size: 14px;
+}
+
 /*navbar menu list li */
 body.darkmode .navbar__menu__list.hidden>li {
     margin: 3px;
@@ -510,7 +558,6 @@ body.darkmode .menu-trigger:focus {
 
 
 
-
 /* preview some content from course before payed */
 body.darkmode .block__curriculum .block_curriculum_sections section div,
 body.darkmode .block__curriculum .block_curriculum_sections section .block__curriculum__section__list li {
@@ -549,7 +596,150 @@ body.darkmode .faq-question:hover {
 }
 
 
+/* home page sections image background */
+body.darkmode .block__image-with-text.b-191409374-background_color,
+body.darkmode .block__featured-products.b-182380346-background_color,
+body.darkmode .block__image-with-text.b-191409400-background_color {
+    background-color: transparent;
+}
+
+/* some review students card div */
+body.darkmode .card .card-header {
+    margin-left: 20px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+body.darkmode .card .card-text {
+    border-radius: 4px;
+    padding: 10px;
+}
+
 /* ========================= End navbar__header in Anther Pages ========================= */
+
+/* ========================= bundle courses or Course Pay ========================= */
+
+/* bundle courses */
+body.darkmode .featured-product-card.b-182380346-card_background_color {
+    background-color: var(--secondary-bg);
+    box-shadow: var(--box-shadow);
+    border: 2px solid var(--secondary-bg);
+}
+
+body.darkmode .featured-product-card:hover {
+    border: 3px solid var(--dark-bg);
+}
+
+body.darkmode .block__featured-products .b-182380346-card_text_alignment .featured-product-card__content__title {
+    line-height: 25px;
+    /* padding: 16px 16px 4px 16px; */
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    max-height: 65px;
+}
+
+body.darkmode .featured-product-card:hover .featured-product-card__content__title {
+    color: var(--accent-yellow);
+}
+
+/* featured-product-card: progressbar */
+
+
+body.darkmode .featured-product-card__progressbar {
+    background: var(--dark-bg);
+    margin-top: 15px;
+    text-align: right;
+    font-size: 0.7em;
+    height: 8px;
+    line-height: 40px;
+    padding: 0px;
+    width: 100%;
+}
+
+/* fill */
+body.darkmode .featured-product-card__progressbar-fill {
+    background: var(--accent-yellow);
+    height: 8px;
+}
+
+/* subtitle */
+body.darkmode .featured-product-card__content__subtitle {
+    color: var(--text-medium);
+    margin-top: 10px;
+    padding: 5px 16px;
+    font-weight: 200;
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 45px;
+    word-wrap: break-word;
+}
+
+/* author name */
+body.darkmode .featured-product-card__author .featured-product-card__author__name {
+    color: var(--text-gray);
+}
+
+/* price */
+body.darkmode .featured-product-card__price {
+    color: var(--accent-yellow);
+}
+
+/* progress complete */
+body.darkmode .featured-product-card__progress {
+    font-size: 12px;
+    color: var(--text-medium);
+}
+
+body.darkmode .featured-product-card__progress span {
+    font-size: 14px;
+    color: var(--text-highlight);
+}
+
+/* pricing less than arrow icon */
+body.darkmode .block__pricing__plan__description__show-button__icon::before {
+    margin-left: 3px;
+}
+
+body.darkmode .block__pricing__plan__description__show-button__icon::after {
+    margin-left: 6px;
+}
+
+
+body.darkmode .block__pricing__plan__description__show-button__icon::before,
+body.darkmode .block__pricing__plan__description__show-button__icon::after {
+    background-color: var(--accent-yellow);
+}
+
+/* description */
+body.darkmode .block__pricing__plan__description p span {
+    background-color: var(--dark-bg) !important;
+}
+
+
+/*block__pricing__plan: radio indicator */
+body.darkmode .block__pricing__plan__radio__custom-indicator {
+    border: 1px solid var(--accent-dark-yellow);
+}
+
+body.darkmode .block__pricing__plan__radio-wrapper:focus .block__pricing__plan__radio__custom-indicator,
+body.darkmode .block__pricing__plan__radio-wrapper:hover .block__pricing__plan__radio__custom-indicator {
+    border: 1px solid var(--accent-yellow);
+    box-shadow: none;
+}
+
+body.darkmode .block__pricing__plan__radio__custom-indicator::after {
+    background-color: var(--accent-yellow);
+}
+
+body.darkmode .block__pricing__plan__radio:checked+.block__pricing__plan__radio__custom-indicator {
+    border: 1px solid var(--accent-yellow);
+}
+
+/* ========================= End bundle courses and Course Pay ========================= */
 
 /* ========================= courses content Page ========================= */
 
@@ -609,14 +799,16 @@ body.darkmode .columns.jsx-4204861187 {}
 /* right side : jsx-4204861187 */
 /* complete progress  and incomplete progress */
 
-body.darkmode .progress.jsx-2615383946,
-body.darkmode .progress.jsx-1189601211 {
+body.darkmode [class^="jsx-"].progress {
     background: var(--secondary-bg);
 }
 
+/* progressBar body*/
+body.darkmode [class^="jsx-"].progressBar {
+    background-color: var(--primary-bg);
+}
 
-body.darkmode .finished.jsx-2615383946,
-body.darkmode .finished.jsx-1189601211 {
+body.darkmode [class^="jsx-"].finished {
     background-color: var(--accent-yellow);
 }
 
@@ -863,6 +1055,8 @@ body.darkmode .course-sidebar .row.lecture-sidebar .course-section .title-contai
 }
 
 /* status icon (complete & incomplete) */
+
+
 body.darkmode .course-section ul.section-list .section-item.completed .status-icon {
     background-color: var(--accent-yellow);
 
@@ -873,7 +1067,7 @@ body.darkmode .course-section ul.section-list .section-item.incomplete .status-i
 }
 
 /* hover */
-body.darkmode .course-section ul.section-list .section-item.completed:hover .status-icon {
+body.darkmode .course-section ul.section-list .section-item.completed .item:hover .status-icon {
     background-color: var(--accent-yellow) !important;
     box-shadow: inset 0px 0px 0px 2px var(--accent-dark-yellow) !important;
 }
@@ -891,6 +1085,12 @@ body.darkmode .course-section ul.section-list .section-item.next-lecture .item {
 
 body.darkmode .course-section ul.section-list .section-item.next-lecture .status-icon {
     box-shadow: inset 0px 0px 0px 2px var(--accent-dark-yellow);
+    background-color: var(--accent-yellow);
+}
+
+body.darkmode .course-section ul.section-list .section-item.next-lecture .item:hover .status-icon {
+    background-color: var(--accent-dark-yellow);
+    box-shadow: inset 0px 0px 0px 2px var(--accent-yellow) !important
 }
 
 
